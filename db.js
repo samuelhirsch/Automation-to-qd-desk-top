@@ -9,14 +9,8 @@ const db = await mysql.createPool({
   password: process.env.MYSQL_PASSWORD,
   database: process.env.MYSQL_DATABASE
 });
-// Create table
-await db.execute(`
-  CREATE TABLE IF NOT EXISTS synced_expenses (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    spend_date DATE UNIQUE,
-    amount DECIMAL(10,2)
-  )
-`);
+
+
 
 console.log('✅ Table ready');
 
